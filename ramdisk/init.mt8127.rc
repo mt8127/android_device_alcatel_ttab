@@ -448,7 +448,7 @@ on property:wlan.driver.status=unloaded
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf -N \
-    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -e/data/misc/wifi/entropy.bin -dd \
+    -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf -dd \
     -I/system/etc/wifi/p2p_supplicant_overlay.conf \
     -O/data/vendor/wifi/wpa/sockets \
     -g@android:wpa_wlan0
