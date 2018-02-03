@@ -8,6 +8,7 @@ $(call inherit-product, device/alcatel/ttab/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l.mk)
 
 PRODUCT_CHARACTERISTICS := tablet
 
