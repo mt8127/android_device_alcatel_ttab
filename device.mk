@@ -159,6 +159,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libbt-vendor
 
+# TextClassifier smart selection model files
+PRODUCT_PACKAGES += \
+    textclassifier.smartselection.bundle1
+
 # hidl packages
 $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 
