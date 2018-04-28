@@ -1,0 +1,12 @@
+/dev/bootimg	/boot emmc defaults defaults
+/dev/logo /logo emmc defaults defaults
+/dev/misc /misc emmc defaults defaults
+/dev/nvram /nvram emmc defaults defaults
+/dev/recovery /recovery emmc defaults defaults
+/dev/uboot /uboot emmc defaults defaults
+/dev/block/mmcblk0p6 /system ext4 defaults defaults
+/dev/block/mmcblk0p7 /cache ext4 defaults defaults
+/dev/block/mmcblk0p8 /data ext4 defaults defaults
+/dev/block/mmcblk1p1 /extsdcard vfat defaults defaults
+/dev/block/mmcblk0p2 /sd-ext ext4 defaults defaults
+/dev/block/sda1	usbotg auto defaults defaults
