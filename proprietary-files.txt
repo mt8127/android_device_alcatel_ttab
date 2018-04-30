@@ -147,7 +147,7 @@ lib/libcamalgo.so
 lib/libcamdrv.so
 #lib/libcamera_client.so
 lib/libcamera_client_mtk.so
-lib/libcamera_metadata.so
+#lib/libcamera_metadata.so
 lib/libcameraanalyzer.so
 lib/libcameracustom.so
 #lib/libcameraservice.so
