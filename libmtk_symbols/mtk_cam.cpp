@@ -45,9 +45,4 @@ extern "C" {
 		_ZN7android13SensorManager16createEventQueueENS_7String8Ei(retVal, sensorMgr, &string, 0);
 		_ZN7android7String8D1Ev(&string);
 	}
-
-	/* FIXME: temporary to prevent systemui crash */
-	int _ZN7android14CameraMetadata14getTagFromNameEPKcPKNS_19VendorTagDescriptorEPj() {
-		return 0;
-	}
 }
