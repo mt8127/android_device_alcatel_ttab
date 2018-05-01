@@ -107,8 +107,8 @@ lib/libMtkOmxG711Dec.so
 lib/libMtkOmxGsmDec.so
 lib/libMtkOmxMp3Dec.so
 lib/libMtkOmxRawDec.so
-#lib/libMtkOmxVdec.so
-#lib/libMtkOmxVenc.so
+lib/libMtkOmxVdec.so
+lib/libMtkOmxVenc.so
 lib/libMtkOmxVorbisEnc.so
 lib/libMtkVideoTranscoder.so
 lib/libSwJpgCodec.so
