@@ -17,7 +17,7 @@
 set -e
 
 VENDOR=alcatel
-DEVICE=ttab
+DEVICE_COMMON=ttab
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -49,7 +49,7 @@ else
 fi
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC"
 
