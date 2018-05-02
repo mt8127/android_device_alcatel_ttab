@@ -52,6 +52,8 @@ void vendor_load_properties()
 	property_override("ro.build.description", "Telekom_Puls-user 5.0.1 LRX21M vC29-0 release-keys");
 	property_override("ro.product.model", "Telekom Puls");
 	property_override("ro.product.device", "T-Tab");
+	property_override("ro.product.brand", "T-Mobile");
+	property_override("ro.product.manufacturer", "TCT Mobile Europe SAS");
 
     ERROR("setting build properties for T-Tab\n");
 }
