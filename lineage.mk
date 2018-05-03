@@ -10,7 +10,7 @@ $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := ttab
-PRODUCT_NAME := cm_ttab
+PRODUCT_NAME := lineage_ttab
 PRODUCT_BRAND := alcatel
 PRODUCT_MODEL := ttab
 PRODUCT_MANUFACTURER := alcatel

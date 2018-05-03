@@ -16,3 +16,5 @@ Front Camera  | 2 MP
 Rear Camera  | 5 MP
 
 ![Telekom Puls](https://scr3.golem.de/screenshots/1509/Telekom_Puls/thumb620/150904_Tablet_Puls_wei_1.jpg "Telekom Puls")
+
+This branch is for building LineageOS 14.1

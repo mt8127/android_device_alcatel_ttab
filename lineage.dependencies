@@ -1,0 +1,6 @@
+[
+    {
+        "repository": "mt8127/android_kernel_alcatel_ttab",
+        "target_path": "kernel/alcatel/ttab"
+    }
+]
