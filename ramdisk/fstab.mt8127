@@ -6,7 +6,7 @@
 /dev/block/platform/mtk-msdc.0/mmcblk0p8					/data		ext4	noatime,nosuid,nodev,noauto_da_alloc,discard	wait,check,resize,encryptable=footer
 /dev/block/platform/mtk-msdc.0/mmcblk0p7					/cache		ext4	noatime,nosuid,nodev,noauto_da_alloc,discard	wait,check
 
-#/dev/block/platform/mtk-msdc.0/mmcblk0p2					/misc		emmc	defaults										defaults
+/dev/block/platform/mtk-msdc.0/mmcblk0p3					/misc		emmc	defaults										defaults
 
 /devices/platform/mtk-msdc.1/mmc_host/mmc*					auto		auto	defaults										voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/platform/mt_usb/musb-hdrc.0.auto/usb1*				auto		auto	defaults										voldmanaged=usbotg:auto
