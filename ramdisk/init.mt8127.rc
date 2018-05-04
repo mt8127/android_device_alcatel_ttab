@@ -861,9 +861,3 @@ service batterywarning /system/bin/batterywarning
     class main
     user shell
     group shell
-
-# Logcat
-service logcat_debug /system/bin/logcat -b all -f /data/logcat.txt -v threadtime
-    class main
-    user root
-    group system
