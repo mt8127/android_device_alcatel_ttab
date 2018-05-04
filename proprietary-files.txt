@@ -154,7 +154,7 @@ lib/libcameracustom.so
 #lib/libcurl.so
 lib/libcustom_nvram.so
 lib/libcvsd_mtk.so
-lib/libdpframework.so
+-lib/libdpframework.so
 lib/libdrmdecrypt.so
 lib/libdrmmtkutil.so
 lib/libdrmmtkwhitelist.so
