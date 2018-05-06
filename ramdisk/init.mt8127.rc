@@ -5,9 +5,6 @@ import init.connectivity.rc
 import init.charging.rc
 import init.mt8127usb.rc
 import init.aee.rc
-import init.ssd.rc
-import init.no_ssd.rc
-import init.ssd_nomuser.rc
    
 on init
 #	export LD_PRELOAD "libxlog.so"
@@ -168,7 +165,6 @@ on init
     mount debugfs none /sys/kernel/debug   
     
  # change owner
-    chown system system /proc/bootprof
     chown root system /proc/mtprof/cputime
     chown root system /proc/mtprof/reboot_pid
 	
@@ -186,7 +182,6 @@ on fs
 
 # mount mtd partitions
     # Mount /system rw first to give the filesystem a chance to save a checkpoint
-    #write /proc/bootprof "INIT:NAND:Mount_START"
     #mount yaffs2 mtd@system /system
 
 # via: set ril and pppd
@@ -201,13 +196,10 @@ on fs
     #mount yaffs2 mtd@system /system ro remount
     #mount yaffs2 mtd@userdata /data nosuid nodev
     #mount yaffs2 mtd@cache /cache nosuid nodev
-    #write /proc/bootprof "INIT:NAND:Mount_END"
 
 #on fs_property:ro.mount.fs=EXT4
-    write /proc/bootprof "INIT:eMMC:Mount_START"
     mount_all /fstab.mt8127
 	setprop ro.crypto.fuse_sdcard true
-    write /proc/bootprof "INIT:eMMC:Mount_END"
     mount iso9660 loop@/system/etc/iAmCdRom.iso /mnt/cd-rom ro
     
     write /sys/class/misc/tp_cfg/data_is_mount 1
@@ -455,112 +447,17 @@ service akmd09911 /system/bin/akmd09911
     user system
     group system
     class main
-	
-service GoogleOtaAgent /system/bin/GoogleOtaBinder
-    class main
-    user system
-    group system
 
-# workaround: disable mtkbt to avoid NE
-service mtkbt /system/bin/mtkbt
-  class late_start
-	socket bt.int.adp dgram 660 bluetooth net_bt
-	socket bt.a2dp.stream dgram 660 bluetooth net_bt
-	user bluetooth
-	group system vpn net_admin inet net_raw net_bt bluetooth net_bt_admin net_bt_stack sdcard_r
-	oneshot
-
-service dhcpcd_bt-pan /system/bin/dhcpcd -BK -dd
-    class main
-    user dhcp
-    group net_admin net_raw
-    disabled
-    oneshot
-
-service dhcpcd_wlan0 /system/bin/dhcpcd -BK -dd
-    class main
-    user dhcp
-    group net_admin net_raw 
-    disabled
-    oneshot
-
-service dhcpcd_p2p /system/bin/dhcpcd -BK -dd
-    class main
-    user dhcp
-    group net_admin net_raw 
-    disabled
-    oneshot
-
-service iprenew_wlan0 /system/bin/dhcpcd -n
-    class main
-    user dhcp
-    group net_admin net_raw 
-    disabled
-    oneshot
-
-service iprenew_p2p /system/bin/dhcpcd -n
-    class main
-    user dhcp
-    group net_admin net_raw 
-    disabled
-    oneshot
-
-service dhcp6cDNS_wlan0 /system/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6cDNS.conf" -Df wlan0
-    disabled
-    oneshot
-
-service dhcp6c_wlan0 /system/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6c.conf" -Df wlan0
-    disabled
-    oneshot
-
-on property:service.dhcp6c_wlan0.enable=0
-    stop dhcp6c_wlan0
-
-on property:service.dhcp6c_wlan0.enable=1
-    start dhcp6c_wlan0
-
-service dhcp6c_PD /system/bin/dhcp6c -c "/etc/wide-dhcpv6/dhcp6cPD.conf" -Df
-    disabled
-    oneshot
 
 #
 #sensor service (end)
 #    
 
-#thermal service
-service thermal_manager /system/bin/thermal_manager
-    class main
-    user root
-	disabled
-    oneshot
 
-service thermal /system/bin/thermal
-    class main
-    user system
-    group system
-	disabled
-
-service thermald /system/bin/thermald
-    class main
-    user system
-    group system
-	disabled
-
-service aal /system/bin/aal
-    class core
-    user system
-    group system graphics radio
-    
 service pq /system/bin/pq
     class main
     user system
     group system graphics
-    oneshot
-
-# FOTA upgrade
-service rbfota /system/bin/fota1
-    class main
-    disabled
     oneshot
 
 #
@@ -614,13 +511,6 @@ service ap_daemon /system/bin/wpa_supplicant \
 	disabled
 	oneshot
 
-service mobile_log_d /system/bin/mobile_log_d
-    class main
-    
-service netdiag /system/bin/netdiag
-    class main
-    socket netdiag stream 0660 root inet
-
 #
 # MT6620 related services (End)
 #
@@ -634,21 +524,12 @@ service bootlogoupdater /system/bin/boot_logo_updater
 	class core
 	oneshot
 
-service auto_shutdown /system/bin/sh /auto_shutdown.sh
-	oneshot
-	disabled
-
 service audio-daemon /system/bin/audiocmdservice_atci
     class main
     socket atci-audio stream 660 media system
     user root
     group media system sdcard_rw
     disabled
-    oneshot
-
-# OTA update backup partition
-service flash_tee2 /system/etc/install-tee2.sh
-    class main
     oneshot
 
 # GuiExt Server init
@@ -667,75 +548,12 @@ service guiext-server /system/bin/guiext-server
     chmod 0660 /dev/ttyGS2
     chown bluetooth radio /dev/ttyGS2
 
-service atci_service /system/bin/atci_service
-    class core
-    socket atci-service stream 660 radio system
-    socket atci-serv-fw stream 660 radio system
-    user root
-    disabled
-    group radio system
-    oneshot
 
-service atcid-daemon-u /system/bin/atcid
-    class main
-    user system
-    group radio system media
-    disabled
-    oneshot
 
-service atcid-daemon-e /system/bin/atcid
-    class core
-    user root
-    group radio system
-    disabled
-    oneshot
-
-service sbchk /system/bin/sbchk 
-    class main
-    user system
-    group system
-    oneshot
 
 on property:init.svc.servicemanager=restarting
-	restart aal
 	restart pq
-
-on property:init.svc.bootanim=running
-	write /proc/bootprof "BOOT_Animation:START"
-
-on property:init.svc.bootanim=stopped
-	write /proc/bootprof "BOOT_Animation:END"
-	start auto_shutdown
-
-on property:ro.build.type=eng
-    start atci_service
-    start atcid-daemon-e
     
-#emsvr service (start)
-#
-on property:ro.build.type=eng
-    start emsvr
-
-on property:ro.build.type=user
-    start emsvr_user
-
-on property:ro.build.type=userdebug
-    start emsvr_user
-
-service emsvr_user /system/bin/em_svr
-    disabled
-    user system
-    group system radio diag
-
-service emsvr /system/bin/em_svr
-    disabled
-    user root
-
-#
-#emsvr service (end)
-#
-
-
 #
 #ape codec service
 #
@@ -744,13 +562,6 @@ service MtkCodecService /system/bin/MtkCodecService
     class main
     user system
     group audio media sdcard_r
-
-#MNLD daemon
-service mnld /system/xbin/mnld
-    class main
-    user gps
-    group gps inet misc sdcard_rw sdcard_r media_rw system
-    socket mnld stream 660 gps system
 
 on boot
 # AGPS
@@ -800,64 +611,3 @@ chmod 0664 /sys/class/leds/lcd-backlight/brightness
 chown system system /sys/class/leds/red/trigger
 chown system system /sys/class/leds/green/trigger
 chown system system /sys/class/leds/blue/trigger
-#
-#ril-daemon (begin)
-#
-service ril-3gddaemon /system/bin/rild_dongle 
-    class main
-    socket rild-dongle stream 660 root radio
-    socket rild-dongle-debug stream 660 radio radio
-    user root
-    group radio cache inet misc audio log
-    disabled
-
-#
-#ril-daemon (end)
-#
-
-#
-#usbdongled(begin)
-#
-service usbdongled /system/bin/dongled
-    class main
-	user root
-	group radio cache inet misc
-	enabled
-	
-#
-#usbdongled(end)
-#
-
-#
-# add the service for call pppd(begin)
-#
-service zpppd_gprs /system/bin/init.gprs-pppd
-    user root
-	group radio cache inet misc
-	disabled
-	oneshot
-#
-# add the service for call pppd(end)
-#
-   
-# 
-# ipo
-#
-service ipod /system/bin/ipod
-    user root
-    group root
-    disabled
-
-#
-# swap
-#
-service enableswap /system/bin/sh /enableswap.sh
-    class core 
-    oneshot
-    seclabel u:r:enableswap:s0
-
-#monitor battery status
-service batterywarning /system/bin/batterywarning
-    class main
-    user shell
-    group shell
