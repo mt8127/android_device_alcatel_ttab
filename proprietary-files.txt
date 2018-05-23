@@ -50,6 +50,7 @@ lib/egl/libGLESv1_CM_mali.so
 lib/egl/libGLESv2_mali.so
 lib/hw/audio.primary.mt8127.so
 lib/hw/camera.mt8127.so
+lib/hw/gps.default.so
 lib/hw/gralloc.mt8127.so
 lib/hw/hwcomposer.mt8127.so
 lib/hw/power.default.so
@@ -132,6 +133,7 @@ lib/libmatv_cust.so
 lib/libmemtrack.so
 lib/libmhalImageCodec.so
 lib/libmmprofile.so
+lib/libmnl.so
 lib/libmp2dec_sa.ca7.so
 lib/libmp4enc_sa.ca7.so
 lib/libmpo.so
@@ -167,6 +169,7 @@ lib/libvp8dec_sa.ca7.so
 lib/libvp9dec_sa.ca7.so
 vendor/media/LMspeed_508.emd
 vendor/media/PFFprec_600.emd
+xbin/mnld
 
 # Widevine - from crackling
 vendor/lib/libwvdrm_L3.so|7e77482481197997294a834bfbc817a01b6075cd

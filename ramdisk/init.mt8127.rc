@@ -509,6 +509,13 @@ service MtkCodecService /system/bin/MtkCodecService
     user system
     group audio media sdcard_r
 
+#MNLD daemon
+service mnld /system/xbin/mnld
+    class main
+    user gps
+    group gps inet misc sdcard_rw sdcard_r media_rw system
+    socket mnld stream 660 gps system
+
 on boot
 # AGPS
     mkdir /data/agps_supl 0771 gps system

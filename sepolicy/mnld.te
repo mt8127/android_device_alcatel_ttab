@@ -44,3 +44,10 @@ allow mnld block_device:dir search;
 
 file_type_auto_trans(mnld,system_data_file,mnld_data_file);
 file_type_auto_trans(mnld,apk_data_file,mnld_data_file);
+
+
+allow mnld nvram_device:chr_file { read write open ioctl };
+allow mnld mmc_device:blk_file { read write open };
+allow mnld sysfs_boot_mode:file { read open };
+allow mnld system_data_file:dir { remove_name };
+allow mnld system_data_file:file { open };
