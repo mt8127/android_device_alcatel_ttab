@@ -18,13 +18,22 @@
         <value>1</value>
     </array>
     <array name="cpu.speeds">
-        <value>400000</value>
+        <value>598000</value>
+        <value>747000</value>
+        <value>1040000</value>
+        <value>1196000</value>
+        <value>1300000</value>
     </array>
     <item name="cpu.idle">100</item>
+    <item name="cpu.awake">100</item>
     <array name="cpu.active">
         <value>100</value>
+        <value>140.2</value>
+        <value>178.5</value>
+        <value>189.3</value>
+        <value>234.2</value>
     </array>
-    <item name="battery.capacity">1000</item>
+    <item name="battery.capacity">4060</item>
     <array name="wifi.batchedscan">
         <value>.2</value>
         <value>2</value>
