@@ -104,6 +104,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	power.default
 
+# Misc
+PRODUCT_PACKAGES += \
+    libcurl
+
 # network
 PRODUCT_PACKAGES += \
     netd
