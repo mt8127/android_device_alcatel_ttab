@@ -38,7 +38,6 @@ etc/firmware/mt6627/mt6627_fm_v4_patch.bin
 etc/firmware/mt6627/mt6627_fm_v5_coeff.bin
 etc/firmware/mt6627/mt6627_fm_v5_patch.bin
 etc/fmr/mt6627_fm_cust.cfg
-etc/mtk_omx_core.cfg
 etc/mtklog-config.prop
 etc/wide-dhcpv6/dhcp6c.conf
 etc/wide-dhcpv6/dhcp6c.script
@@ -61,20 +60,6 @@ lib/libGdmaScalerPipe.so
 lib/libJpgDecPipe.so
 lib/libJpgEncPipe.so
 lib/libMali.so
-lib/libMtkOmxAdpcmDec.so
-lib/libMtkOmxAdpcmEnc.so
-lib/libMtkOmxAlacDec.so
-lib/libMtkOmxApeDec.so
-lib/libMtkOmxCore.so
-lib/libMtkOmxFlacDec.so
-lib/libMtkOmxG711Dec.so
-lib/libMtkOmxGsmDec.so
-lib/libMtkOmxMp3Dec.so
-lib/libMtkOmxRawDec.so
-lib/libMtkOmxVdec.so
-lib/libMtkOmxVenc.so
-lib/libMtkOmxVorbisEnc.so
-lib/libMtkVideoTranscoder.so
 lib/libSwJpgCodec.so
 lib/lib_uree_mtk_crypto.so
 lib/lib_uree_mtk_video_secure_al.so
@@ -134,8 +119,6 @@ lib/libmemtrack.so
 lib/libmhalImageCodec.so
 lib/libmmprofile.so
 lib/libmnl.so
-lib/libmp2dec_sa.ca7.so
-lib/libmp4enc_sa.ca7.so
 lib/libmpo.so
 lib/libmpodecoder.so
 lib/libmpoencoder.so
@@ -161,12 +144,7 @@ lib/libstagefrighthw.so
 lib/libtz_uree.so
 lib/libui_ext.so
 lib/liburee_meta_drmkeyinstall_v2.so
-lib/libvc1dec_sa.ca7.so
-lib/libvcodec_oal.so
 lib/libvcodec_utility.so
-lib/libvcodecdrv.so
-lib/libvp8dec_sa.ca7.so
-lib/libvp9dec_sa.ca7.so
 vendor/media/LMspeed_508.emd
 vendor/media/PFFprec_600.emd
 xbin/mnld
@@ -176,3 +154,21 @@ vendor/lib/libwvdrm_L3.so|7e77482481197997294a834bfbc817a01b6075cd
 vendor/lib/libWVStreamControlAPI_L3.so|61673304827483d44b735a3dd08f0783d10ce92d
 vendor/lib/mediadrm/libwvdrmengine.so|b88c5df27094314c39ff208fdd30c9e37042c70c
 
+# Media Codecs - from geminipda
+vendor/etc/mtk_omx_core.cfg|b12252151e0beed2180f0390644f85631af4c12e
+vendor/lib/libMtkOmxCore.so|59df03f467f8afd60cab923c1e80b51c54e3bcca
+vendor/lib/libClearMotionFW.so|24dd88a89695ef25b7b6fc750a675e4d12acda5e
+vendor/lib/libMtkOmxVdecEx.so|17c23ab3bdd35c46dedc5aae1ec07582262b8085
+vendor/lib/libMtkOmxVenc.so|05481953106a10b3f96ef21cc1ab94a39b0fc272
+vendor/lib/libHEVCdec_sa.ca7.android.so|47ba849514ddec3b921e87ef6173121558b0fec0
+vendor/lib/libvc1dec_sa.ca7.so|31033c3c07593d0fb2d4485202b1d9e21b75adbc
+vendor/lib/libvcodec_oal.so|5c8475c1cdf221b30e2f0054373423b31c1a0c5a
+vendor/lib/libvcodecdrv.so|36dc8318671311ccedea8d0be141f61c5d2d5ed8
+vendor/lib/librrc.so|92fa77c910745e57f3b76e47dad2c2e62e345082
+vendor/lib/libvp8dec_sa.ca7.so|ef61707aa404315664b49eac0d8a5295717b10a9
+vendor/lib/libvp8enc_sa.ca7.so|47b18619978eaee2ac09f05358c1308b37a56877
+vendor/lib/libvp9dec_sa.ca7.so|51b0a4e51a9ce31db256ae90d85f8800e019be17
+vendor/lib/libh264enc_sa.ca7.so|032489339e496c8fe0827bfd937e4991ff4cc66d
+vendor/lib/libh264enc_sb.ca7.so|a8196e66430ba5d1b07b4001e3ee841b0918668f
+vendor/lib/libmp4enc_sa.ca7.so|f6c46576d8eb4c5bed3b54a2f5f61a6e841332ab
+vendor/lib/libmp4enc_xa.ca7.so|9c3e5b00218a2a4acb5db693dfe62eb406af6baa

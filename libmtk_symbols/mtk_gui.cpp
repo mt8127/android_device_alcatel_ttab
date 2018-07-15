@@ -12,4 +12,6 @@ extern "C" {
         _ZN7android13GraphicBufferC1EjjijNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE(
             inWidth, inHeight, inFormat, inUsage, "<Unknown>");
     }
+
+	void _ZN7android11IDumpTunnel11asInterfaceERKNS_2spINS_7IBinderEEE() {}
 }
