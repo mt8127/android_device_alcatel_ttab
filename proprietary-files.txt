@@ -52,7 +52,7 @@ lib/hw/camera.mt8127.so
 lib/hw/gps.default.so
 lib/hw/gralloc.mt8127.so
 lib/hw/hwcomposer.mt8127.so
-lib/hw/sensors.mt8127.so
+lib/hw/sensors.mt8127.so:lib/libsensors.mt8127.so
 lib/lib3a.so
 lib/libBnMtkCodec.so
 lib/libGdmaScalerPipe.so

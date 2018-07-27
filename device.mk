@@ -106,6 +106,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	power.default
 
+# Sensor
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/_hals.conf:system/vendor/etc/sensors/_hals.conf
+
+PRODUCT_PACKAGES += \
+    sensors.mt8127
+
 # Misc
 PRODUCT_PACKAGES += \
     libcurl
