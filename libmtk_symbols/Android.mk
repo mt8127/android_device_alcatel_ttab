@@ -25,7 +25,8 @@ LOCAL_SRC_FILES := \
     mtk_omx.cpp \
     mtk_ui.cpp \
 	mtk_icu53.cpp \
-	mtk_wvm.cpp
+	mtk_wvm.cpp \
+	mtk_sensor.cpp
 
 LOCAL_SHARED_LIBRARIES := libbinder libutils liblog libgui libui libicuuc libstagefright
 LOCAL_MODULE := libmtk_symbols
