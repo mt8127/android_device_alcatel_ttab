@@ -29,11 +29,14 @@
 
 #include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
 
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
+
+#include <android-base/file.h>
+#include <android-base/logging.h>
+#include <android-base/strings.h>
+#include <android-base/properties.h>
 
 void property_override(char const prop[], char const value[])
 {
@@ -46,14 +49,21 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
+void property_override_dual(char const system_prop[],
+        char const vendor_prop[], char const value[])
+{
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
+}
+
 void vendor_load_properties()
 {
-	property_override("ro.build.fingerprint", "T-Mobile/Telekom_Puls/T-Tab:5.0.1/LRX21M/vC29-0:user/release-keys");
-	property_override("ro.build.description", "Telekom_Puls-user 5.0.1 LRX21M vC29-0 release-keys");
-	property_override("ro.product.model", "Telekom Puls");
-	property_override("ro.product.device", "T-Tab");
-	property_override("ro.product.brand", "T-Mobile");
-	property_override("ro.product.manufacturer", "TCT Mobile Europe SAS");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "T-Mobile/Telekom_Puls/T-Tab:5.0.1/LRX21M/vC29-0:user/release-keys");
+    property_override("ro.build.description", "Telekom_Puls-user 5.0.1 LRX21M vC29-0 release-keys");
+    property_override_dual("ro.product.model", "ro.vendor.product.model", "Telekom Puls");
+    property_override_dual("ro.product.device", "ro.vendor.product.device", "T-Tab");
+    property_override("ro.product.brand", "T-Mobile");
+    property_override("ro.product.manufacturer", "TCT Mobile Europe SAS");
 
-    ERROR("setting build properties for T-Tab\n");
+    LOG(ERROR) << "setting build properties for T-Tab\n";
 }
