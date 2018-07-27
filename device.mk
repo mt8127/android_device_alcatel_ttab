@@ -148,6 +148,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libbt-vendor
 
+# Common Android Go configurations
+$(call inherit-product, build/target/product/go_defaults.mk)
+
 # hidl packages
 $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
 
