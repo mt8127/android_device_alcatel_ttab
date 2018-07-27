@@ -148,5 +148,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libbt-vendor
 
+# hidl packages
+$(call inherit-product, $(LOCAL_PATH)/hidl.mk)
+
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/alcatel/ttab/ttab-vendor.mk)
