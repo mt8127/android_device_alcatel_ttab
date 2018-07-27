@@ -93,6 +93,8 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_DIR)/bluetooth
 # RECOVERY
 TARGET_RECOVERY_FSTAB := $(DEVICE_DIR)/recovery.fstab
 
+DEVICE_MANIFEST_FILE += $(DEVICE_DIR)/manifest.xml
+
 # shims
 TARGET_LD_SHIM_LIBS := \
 	/system/lib/egl/libEGL_mali.so|libxlog.so \
