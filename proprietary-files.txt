@@ -78,6 +78,7 @@ lib/libbluetooth_relayer.so
 lib/libbluetoothdrv.so
 lib/libbluetoothem_mtk.so
 lib/libbwc.so
+lib/libstlport.so
 lib/libcam.camadapter.so
 lib/libcam.campipe.so
 lib/libcam.camshot.so
