@@ -93,10 +93,19 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_DIR)/bluetooth
 # RECOVERY
 TARGET_RECOVERY_FSTAB := $(DEVICE_DIR)/recovery.fstab
 
-# libxlog
-TARGET_LDPRELOAD := libxlog.so:libmtk_symbols.so
-LINKER_FORCED_SHIM_LIBS := /system/lib/egl/libEGL_mali.so|libxlog.so:/system/lib/egl/libGLESv1_CM_mali.so|libxlog.so:/system/lib/egl/libGLESv2_mali.so|libxlog.so:/system/lib/libMtkOmxVenc.so|libmtk_symbols.so:/system/lib/libcam_utils.so|libmtk_symbols.so:/system/vendor/lib/libwvm.so|libmtk_symbols.so
-
+# shims
+TARGET_LD_SHIM_LIBS := \
+	/system/lib/egl/libEGL_mali.so|libxlog.so \
+	/system/lib/egl/libGLESv1_CM_mali.so|libxlog.so \
+	/system/lib/egl/libGLESv2_mali.so|libxlog.so \
+	/system/bin/guiext-server|libmtk_symbols.so \
+	/system/lib/libgui_ext.so|libmtk_symbols.so \
+	/system/lib/hw/hwcomposer.mt8127.so|libmtk_symbols.so \
+	/system/lib/hw/hwcomposer.mt8127.so|libxlog.so \
+	/system/lib/libMtkOmxVenc.so|libmtk_symbols.so \
+	/system/lib/libcam_utils.so|libmtk_symbols.so \
+	/system/lib/libcam.utils.sensorlistener.so|libmtk_symbols.so \
+	/system/vendor/lib/libwvm.so|libmtk_symbols.so
 
 # SELinux
 BOARD_SECCOMP_POLICY := $(DEVICE_DIR)/seccomp
