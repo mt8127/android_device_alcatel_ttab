@@ -105,6 +105,7 @@ TARGET_LD_SHIM_LIBS := \
 	/system/lib/hw/hwcomposer.mt8127.so|libmtk_symbols.so \
 	/system/lib/hw/hwcomposer.mt8127.so|libxlog.so \
 	/system/lib/libMtkOmxVenc.so|libmtk_symbols.so \
+	/system/vendor/lib/libvcodecdrv.so|libmtk_symbols.so \
 	/system/lib/libcam_utils.so|libmtk_symbols.so \
 	/system/lib/libcam.utils.sensorlistener.so|libmtk_symbols.so \
 	/system/vendor/lib/libwvm.so|libmtk_symbols.so \
