@@ -12,3 +12,4 @@ getegid32: 1
 getpid: 1
 uname: 1
 fsync : 1
+sysinfo: 1
