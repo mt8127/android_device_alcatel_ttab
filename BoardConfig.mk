@@ -107,8 +107,8 @@ TARGET_LD_SHIM_LIBS := \
 	/system/lib/libMtkOmxVenc.so|libmtk_symbols.so \
 	/system/lib/libcam_utils.so|libmtk_symbols.so \
 	/system/lib/libcam.utils.sensorlistener.so|libmtk_symbols.so \
-	/system/vendor/lib/libwvm.so|libmtk_symbols.so
-
+	/system/vendor/lib/libwvm.so|libmtk_symbols.so \
+    /system/lib/hw/gps.default.so|libboringssl-compat.so
 # SELinux
 BOARD_SECCOMP_POLICY := $(DEVICE_DIR)/seccomp
 #BOARD_SEPOLICY_DIRS += $(DEVICE_DIR)/sepolicy

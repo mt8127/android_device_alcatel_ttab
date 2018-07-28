@@ -115,7 +115,8 @@ PRODUCT_PACKAGES += \
 
 # Misc
 PRODUCT_PACKAGES += \
-    libcurl
+    libcurl \
+    libboringssl-compat
 
 # network
 PRODUCT_PACKAGES += \
