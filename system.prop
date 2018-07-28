@@ -33,6 +33,9 @@ ro.carrier=wifi-only
 
 ro.sys.sdcardfs=false
 
+# Default OMX service to non-Treble
+persist.media.treble_omx=false
+ 
 dalvik.vm.heapstartsize=5m
 dalvik.vm.heapgrowthlimit=128m
 dalvik.vm.heapsize=256m
