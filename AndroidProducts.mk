@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_ttab.mk
+    $(LOCAL_DIR)/lineage_ttab.mk
