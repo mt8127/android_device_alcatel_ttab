@@ -161,7 +161,7 @@ PRODUCT_PACKAGES += \
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
-    textclassifier.smartselection.bundle1
+    textclassifier.bundle1
 
 # hidl packages
 $(call inherit-product, $(LOCAL_PATH)/hidl.mk)
