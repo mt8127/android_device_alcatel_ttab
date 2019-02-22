@@ -5,6 +5,7 @@
 #include <stdint.h>
 
 extern "C" {
+    void _ZN7android13SensorManager16getDefaultSensorEi() {}
     void _ZN7android13GraphicBufferC1EjjijNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE(
             void *(pthis), uint32_t inWidth, uint32_t inHeight, int inFormat,
             uint32_t inUsage, std::string requestorName);
