@@ -1,7 +1,8 @@
 #include <MtpTypes.h>
 #include <system/audio.h>
 #include <utils/StrongPointer.h>
-#include <media/IAudioFlinger.h>
+//#include <media/IAudioFlinger.h>
+#include <binder/IInterface.h>
 #include <hardware/audio.h>
 #include <stdlib.h>
 #include <dlfcn.h>
