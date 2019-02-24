@@ -80,6 +80,12 @@ typedef enum {
 
     WIFI_SUBCMD_SET_RSSI_MONITOR,                     /* 0x0007 */
     /* Add more sub commands here */
+
+    WIFI_SUBCMD_GET_ROAMING_CAPABILITIES,             /* 0x0008 */
+    /* skip 0x0009 for diver set_roaming_policy */
+    WIFI_SUBCMD_CONFIG_ROAMING = 0x000a,              /* 0x000a */
+    WIFI_SUBCMD_ENABLE_ROAMING,                       /* 0x000b */
+    WIFI_SUBCMD_SELECT_TX_POWER_SCENARIO,             /* 0x000c */
 } WIFI_SUB_COMMAND;
 
 typedef enum {
@@ -123,6 +129,15 @@ typedef enum {
     WIFI_ATTRIBUTE_MAX_RSSI,
     WIFI_ATTRIBUTE_MIN_RSSI,
     WIFI_ATTRIBUTE_RSSI_MONITOR_START,
+
+    WIFI_ATTRIBUTE_ROAMING_CAPABILITIES,
+    WIFI_ATTRIBUTE_ROAMING_BLACKLIST_NUM,
+    WIFI_ATTRIBUTE_ROAMING_BLACKLIST_BSSID,
+    WIFI_ATTRIBUTE_ROAMING_WHITELIST_NUM,
+    WIFI_ATTRIBUTE_ROAMING_WHITELIST_SSID,
+    WIFI_ATTRIBUTE_ROAMING_STATE,
+
+    WIFI_ATTRIBUTE_TX_POWER_SCENARIO,
 } WIFI_ATTRIBUTE;
 
 typedef enum {
@@ -188,6 +203,7 @@ typedef struct {
 
 
     // add other details
+    wifi_roaming_capabilities roaming_capa;         // capabilities of roaming
 } hal_info;
 
 #define PNO_SSID_FOUND  0x1
