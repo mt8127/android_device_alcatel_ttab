@@ -168,6 +168,12 @@ on init
     chown root system /proc/mtprof/reboot_pid
 	
 on boot
+    # Allow to access debugfs
+    chmod 755 /sys/kernel/debug
+
+    # Set up kernel tracing, but disable it by default
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker
+    write /sys/kernel/debug/tracing/tracing_on 0
 # start sensor services
 # start akmd8963 
     
