@@ -6,6 +6,7 @@
         <interface>
             <name>IDevicesFactory</name>
             <instance>default</instance>
+            <instance>msd</instance>
         </interface>
     </hal>
     <hal format="hidl">
@@ -21,27 +22,8 @@
         <name>android.hardware.bluetooth</name>
         <transport arch="32">passthrough</transport>
         <version>1.0</version>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.graphics.allocator</name>
-        <transport arch="32">passthrough</transport>
-        <version>2.0</version>
         <interface>
-            <name>IAllocator</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.graphics.composer</name>
-        <transport arch="32">passthrough</transport>
-        <version>2.1</version>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.graphics.mapper</name>
-        <transport arch="32">passthrough</transport>
-        <version>2.0</version>
-        <interface>
-            <name>IMapper</name>
+            <name>IBluetoothHci</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -49,10 +31,6 @@
         <name>android.hardware.camera.provider</name>
         <transport arch="32">passthrough</transport>
         <version>2.4</version>
-        <interface>
-            <name>ICameraProvider</name>
-            <instance>legacy/0</instance>
-        </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.cas</name>
@@ -66,7 +44,7 @@
     <hal format="hidl">
         <name>android.hardware.configstore</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>ISurfaceFlingerConfigs</name>
             <instance>default</instance>
@@ -95,6 +73,29 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>android.hardware.graphics.allocator</name>
+        <transport arch="32">passthrough</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IAllocator</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.graphics.composer</name>
+        <transport arch="32">passthrough</transport>
+        <version>2.1</version>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.graphics.mapper</name>
+        <transport arch="32">passthrough</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IMapper</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.health</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -116,8 +117,12 @@
         <name>android.hardware.light</name>
         <transport arch="32">passthrough</transport>
         <version>2.0</version>
+        <interface>
+            <name>ILight</name>
+            <instance>default</instance>
+        </interface>
     </hal>
-     <hal format="hidl">
+    <hal format="hidl">
         <name>android.hardware.media.omx</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -139,6 +144,10 @@
         <name>android.hardware.power</name>
         <transport arch="32">passthrough</transport>
         <version>1.0</version>
+        <interface>
+            <name>IPower</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.renderscript</name>
@@ -149,11 +158,10 @@
         <name>android.hardware.sensors</name>
         <transport arch="32">passthrough</transport>
         <version>1.0</version>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.tests.libhwbinder</name>
-        <transport arch="32">passthrough</transport>
-        <version>1.0</version>
+        <interface>
+            <name>ISensors</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.usb</name>
@@ -170,6 +178,15 @@
         <version>1.2</version>
         <interface>
             <name>IWifi</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.wifi.supplicant</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>ISupplicant</name>
             <instance>default</instance>
         </interface>
     </hal>
