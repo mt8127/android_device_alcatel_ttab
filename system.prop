@@ -18,23 +18,15 @@ drm.service.enabled=true
 persist.radio.combo.chipid=-1
 mediatek.wlan.chip=
 mediatek.wlan.module.postfix=_
-ro.egl.destroy_after_detach=true
 
 # Factory Reset Protection
 ro.frp.pst=/dev/block/platform/mtk-msdc.0/mmcblk0p2
-
-persist.sys.strictmode.visual=0
-persist.sys.strictmode.disable=1
-
-ro.enable_boot_charger_mode=1
 
 ro.radio.noril=1
 ro.carrier=wifi-only
 
 ro.sys.sdcardfs=false
 
-# Default OMX service to non-Treble
-persist.media.treble_omx=false
  
 dalvik.vm.heapstartsize=5m
 dalvik.vm.heapgrowthlimit=128m
