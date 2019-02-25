@@ -26,6 +26,7 @@ ro.radio.noril=1
 ro.carrier=wifi-only
 
 ro.sys.sdcardfs=false
+ro.sys.sdcard_fuse=true
 
  
 dalvik.vm.heapstartsize=5m
