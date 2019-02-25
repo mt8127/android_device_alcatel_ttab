@@ -139,17 +139,15 @@ PRODUCT_PACKAGES += \
 	lights.mt8127
 
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
     lib_driver_cmd_mt66xx \
     libwifi-hal-mt66xx \
     wifi_hal \
     libwpa_client \
     hostapd \
-    hostapd_cli \
-    dhcpcd.conf \
     wificond \
     wifilogd \
-    wpa_supplicant
+    wpa_supplicant \
+    wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
