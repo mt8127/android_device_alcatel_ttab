@@ -97,7 +97,6 @@ lib/libdrmmtkwhitelist.so
 lib/libem_support_jni.so
 lib/libfeatureio.so
 lib/libfile_op.so
-lib/libfmjni.so
 lib/libgui_ext.so
 lib/libhwm.so
 lib/libimageio.so
